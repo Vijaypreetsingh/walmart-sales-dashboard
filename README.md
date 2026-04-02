@@ -15,4 +15,4 @@ An interactive sales analytics dashboard built using Python and Streamlit.
 - Plotly
 
 ## Live Dashboard
-(Add your Streamlit app URL here)
+(https://walmart-sales-dashboard-aphgvvchsuemxcb29itacc.streamlit.app/)
