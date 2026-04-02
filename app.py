@@ -19,12 +19,12 @@ def load_data(path):
 
     df = pd.read_csv(path)
     if "Date" in df.columns:
-        df["Date"] = pd.to_datetime(df["Date"], errors="coerce", infer_datetime_format=True)
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
 
-    numeric_cols = ["Weekly_Sales", "Temperature", "Fuel_Price", "CPI", "Unemployment"]
-    for col in numeric_cols:
-        if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors="coerce")
+numeric_cols = ["Weekly_Sales", "Temperature", "Fuel_Price", "CPI", "Unemployment"]
+for col in numeric_cols:
+    if col in df.columns:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
 
     if "Holiday_Flag" in df.columns:
         df["Holiday"] = df["Holiday_Flag"].map({0: "Non-Holiday", 1: "Holiday"})
